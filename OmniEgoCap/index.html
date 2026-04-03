@@ -1,19 +1,37 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-EH8GZHYQWZ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-EH8GZHYQWZ");
+    </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Primary Meta Tags -->
     <meta
       name="title"
-      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction" />
+      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+    />
     <meta
       name="description"
-      content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups." />
+      content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups."
+    />
     <meta
       name="keywords"
-      content="OmniEgoCap, Egocentric Vision, Motion Capture, Motion Reconstruction, Diffusion Models, Computer Vision, AI" />
+      content="OmniEgoCap, Egocentric Vision, Motion Capture, Motion Reconstruction, Diffusion Models, Computer Vision, AI"
+    />
     <meta name="author" content="Kyungwon Cho, Hanbyul Joo" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
@@ -23,22 +41,27 @@
     <meta property="og:site_name" content="Seoul National University" />
     <meta
       property="og:title"
-      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction" />
+      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+    />
     <meta
       property="og:description"
-      content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups." />
+      content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups."
+    />
     <meta
       property="og:url"
-      content="https://kyungwoncho.github.io/OmniEgoCap" />
+      content="https://kyungwoncho.github.io/OmniEgoCap"
+    />
     <meta
       property="og:image"
-      content="https://kyungwoncho.github.io/OmniEgoCap/static/images/social_preview.png" />
+      content="https://kyungwoncho.github.io/OmniEgoCap/static/images/social_preview.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="OmniEgoCap - Research Preview" />
     <meta
       property="article:published_time"
-      content="2025-01-01T00:00:00.000Z" />
+      content="2026-03-31T18:29:41.000Z"
+    />
     <meta property="article:author" content="Kyungwon Cho" />
     <meta property="article:section" content="Research" />
     <meta property="article:tag" content="Egocentric Motion Capture" />
@@ -48,22 +71,26 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction" />
+      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+    />
     <meta
       name="twitter:description"
-      content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups." />
+      content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups."
+    />
     <meta
       name="twitter:image"
-      content="https://kyungwoncho.github.io/OmniEgoCap/static/images/social_preview.png" />
+      content="https://kyungwoncho.github.io/OmniEgoCap/static/images/social_preview.png"
+    />
     <meta name="twitter:image:alt" content="OmniEgoCap - Research Preview" />
 
     <!-- Academic/Research Specific -->
     <meta
       name="citation_title"
-      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction" />
+      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+    />
     <meta name="citation_author" content="Cho, Kyungwon" />
     <meta name="citation_author" content="Joo, Hanbyul" />
-    <meta name="citation_publication_date" content="2025" />
+    <meta name="citation_publication_date" content="2026" />
     <meta name="citation_arxiv_id" content="2512.19283" />
     <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2512.19283" />
 
@@ -99,7 +126,8 @@
       onload="
         this.onload = null;
         this.rel = 'stylesheet';
-      " />
+      "
+    />
     <link
       rel="preload"
       href="static/css/bulma-slider.min.css"
@@ -107,7 +135,8 @@
       onload="
         this.onload = null;
         this.rel = 'stylesheet';
-      " />
+      "
+    />
     <link
       rel="preload"
       href="static/css/fontawesome.all.min.css"
@@ -115,7 +144,8 @@
       onload="
         this.onload = null;
         this.rel = 'stylesheet';
-      " />
+      "
+    />
     <link
       rel="preload"
       href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
@@ -123,7 +153,8 @@
       onload="
         this.onload = null;
         this.rel = 'stylesheet';
-      " />
+      "
+    />
 
     <!-- Fallback for browsers that don't support preload -->
     <noscript>
@@ -132,21 +163,25 @@
       <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
       <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+      />
     </noscript>
 
     <!-- Fonts - Optimized loading -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
 
     <!-- Defer non-critical JavaScript -->
     <script
       defer
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
     <script
       defer
-      src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+      src="https://documentcloud.adobe.com/view-sdk/main.js"
+    ></script>
     <script defer src="static/js/fontawesome.all.min.js"></script>
     <script defer src="static/js/bulma-carousel.min.js"></script>
     <script defer src="static/js/bulma-slider.min.js"></script>
@@ -179,7 +214,7 @@
             }
           }
         ],
-        "datePublished": "2025-01-01",
+        "datePublished": "2026-03-31",
         "publisher": {
           "@type": "Organization",
           "name": "arXiv"
@@ -231,7 +266,8 @@
       class="scroll-to-top"
       onclick="scrollToTop()"
       title="Scroll to top"
-      aria-label="Scroll to top">
+      aria-label="Scroll to top"
+    >
       <i class="fas fa-chevron-up"></i>
     </button>
 
@@ -277,7 +313,8 @@
                       <a
                         href="static/pdfs/OmniEgoCap.pdf"
                         target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
+                        class="external-link button is-normal is-rounded is-dark"
+                      >
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
@@ -290,7 +327,8 @@
                       <a
                         href="https://arxiv.org/abs/2512.19283"
                         target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
+                        class="external-link button is-normal is-rounded is-dark"
+                      >
                         <span class="icon">
                           <i class="ai ai-arxiv"></i>
                         </span>
@@ -304,7 +342,8 @@
                         href="https://github.com/KyungWonCho/OmniEgoCap"
                         target="_blank"
                         class="external-link button is-normal is-rounded is-dark"
-                        style="pointer-events: none; opacity: 0.6">
+                        style="pointer-events: none; opacity: 0.6"
+                      >
                         <span class="icon">
                           <i class="fab fa-github"></i>
                         </span>
@@ -341,7 +380,8 @@
               loop
               playsinline
               height="100%"
-              preload="metadata">
+              preload="metadata"
+            >
               <!-- TODO: Add your video file path here -->
               <source src="static/videos/teaser.mp4" type="video/mp4" />
             </video>
@@ -406,7 +446,8 @@
                   muted
                   loop
                   height="100%"
-                  preload="metadata">
+                  preload="metadata"
+                >
                   <source src="static/videos/demo1.mp4" type="video/mp4" />
                 </video>
                 <div class="speed-control">
@@ -431,7 +472,8 @@
                   muted
                   loop
                   height="100%"
-                  preload="metadata">
+                  preload="metadata"
+                >
                   <source src="static/videos/demo2.mp4" type="video/mp4" />
                 </video>
                 <div class="speed-control">
@@ -456,7 +498,8 @@
                   muted
                   loop
                   height="100%"
-                  preload="metadata">
+                  preload="metadata"
+                >
                   <source src="static/videos/demo3.mp4" type="video/mp4" />
                 </video>
                 <div class="speed-control">
@@ -481,7 +524,8 @@
                   muted
                   loop
                   height="100%"
-                  preload="metadata">
+                  preload="metadata"
+                >
                   <source src="static/videos/demo4.mp4" type="video/mp4" />
                 </video>
                 <div class="speed-control">
@@ -518,24 +562,28 @@
                   muted
                   loop
                   height="100%"
-                  preload="metadata">
+                  preload="metadata"
+                >
                   <source src="static/videos/comp1.mp4" type="video/mp4" />
                 </video>
                 <div class="speed-control">
                   <span class="speed-label">Speed:</span>
                   <button
                     class="speed-btn comp-speed is-active"
-                    onclick="setCompSpeed(1)">
+                    onclick="setCompSpeed(1)"
+                  >
                     1×
                   </button>
                   <button
                     class="speed-btn comp-speed"
-                    onclick="setCompSpeed(2)">
+                    onclick="setCompSpeed(2)"
+                  >
                     2×
                   </button>
                   <button
                     class="speed-btn comp-speed"
-                    onclick="setCompSpeed(4)">
+                    onclick="setCompSpeed(4)"
+                  >
                     4×
                   </button>
                 </div>
@@ -548,24 +596,28 @@
                   muted
                   loop
                   height="100%"
-                  preload="metadata">
+                  preload="metadata"
+                >
                   <source src="static/videos/comp2.mp4" type="video/mp4" />
                 </video>
                 <div class="speed-control">
                   <span class="speed-label">Speed:</span>
                   <button
                     class="speed-btn comp-speed is-active"
-                    onclick="setCompSpeed(1)">
+                    onclick="setCompSpeed(1)"
+                  >
                     1×
                   </button>
                   <button
                     class="speed-btn comp-speed"
-                    onclick="setCompSpeed(2)">
+                    onclick="setCompSpeed(2)"
+                  >
                     2×
                   </button>
                   <button
                     class="speed-btn comp-speed"
-                    onclick="setCompSpeed(4)">
+                    onclick="setCompSpeed(4)"
+                  >
                     4×
                   </button>
                 </div>
@@ -578,24 +630,28 @@
                   muted
                   loop
                   height="100%"
-                  preload="metadata">
+                  preload="metadata"
+                >
                   <source src="static/videos/comp3.mp4" type="video/mp4" />
                 </video>
                 <div class="speed-control">
                   <span class="speed-label">Speed:</span>
                   <button
                     class="speed-btn comp-speed is-active"
-                    onclick="setCompSpeed(1)">
+                    onclick="setCompSpeed(1)"
+                  >
                     1×
                   </button>
                   <button
                     class="speed-btn comp-speed"
-                    onclick="setCompSpeed(2)">
+                    onclick="setCompSpeed(2)"
+                  >
                     2×
                   </button>
                   <button
                     class="speed-btn comp-speed"
-                    onclick="setCompSpeed(4)">
+                    onclick="setCompSpeed(4)"
+                  >
                     4×
                   </button>
                 </div>
@@ -603,7 +659,7 @@
             </div>
           </div>
         </div>
-        </section>
+      </section>
 
       <section class="hero">
         <div class="hero-body">
@@ -615,7 +671,8 @@
               <img
                 src="static/images/architecture.png"
                 alt="Method overview"
-                loading="lazy" />
+                loading="lazy"
+              />
               <div class="content has-text-justified mb-1">
                 <p>
                   Our framework uses a <b>conditional diffusion model</b> to
@@ -638,7 +695,8 @@
               <img
                 src="static/images/augmentation.png"
                 alt="Geometry-aware augmentation"
-                loading="lazy" />
+                loading="lazy"
+              />
               <div class="content has-text-justified mb-1">
                 <p>
                   To enable <b>device-agnostic generalization</b>, we introduce
@@ -666,7 +724,8 @@
             <button
               class="copy-bibtex-btn"
               onclick="copyBibTeX()"
-              title="Copy BibTeX to clipboard">
+              title="Copy BibTeX to clipboard"
+            >
               <i class="fas fa-copy"></i>
               <span class="copy-text">Copy</span>
             </button>
@@ -690,7 +749,8 @@
                   This page was built using the
                   <a
                     href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                    target="_blank">
+                    target="_blank"
+                  >
                     Academic Project Page Template
                   </a>
                   which was adopted from the 
@@ -705,7 +765,8 @@
                   <a
                     rel="license"
                     href="http://creativecommons.org/licenses/by-sa/4.0/"
-                    target="_blank">
+                    target="_blank"
+                  >
                     Creative Commons Attribution-ShareAlike 4.0 International
                     License
                   </a>
