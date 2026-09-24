@@ -22,7 +22,7 @@
     <!-- Primary Meta Tags -->
     <meta
       name="title"
-      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+      content="OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction"
     />
     <meta
       name="description"
@@ -32,7 +32,7 @@
       name="keywords"
       content="OmniEgoCap, Egocentric Vision, Motion Capture, Motion Reconstruction, Diffusion Models, Computer Vision, AI"
     />
-    <meta name="author" content="Kyungwon Cho, Hanbyul Joo" />
+    <meta name="author" content="Kyungwon Cho, Jeonghyeon Na, Hanbyul Joo" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
 
@@ -41,7 +41,7 @@
     <meta property="og:site_name" content="Seoul National University" />
     <meta
       property="og:title"
-      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+      content="OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction"
     />
     <meta
       property="og:description"
@@ -71,7 +71,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+      content="OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction"
     />
     <meta
       name="twitter:description"
@@ -86,11 +86,16 @@
     <!-- Academic/Research Specific -->
     <meta
       name="citation_title"
-      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+      content="OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction"
     />
     <meta name="citation_author" content="Cho, Kyungwon" />
+    <meta name="citation_author" content="Na, Jeonghyeon" />
     <meta name="citation_author" content="Joo, Hanbyul" />
     <meta name="citation_publication_date" content="2026" />
+    <meta
+      name="citation_conference_title"
+      content="Advances in Neural Information Processing Systems (NeurIPS)"
+    />
     <meta name="citation_arxiv_id" content="2512.19283" />
     <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2512.19283" />
 
@@ -192,13 +197,22 @@
       {
         "@context": "https://schema.org",
         "@type": "ScholarlyArticle",
-        "headline": "OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction",
+        "headline": "OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction",
         "description": "OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups.",
         "author": [
           {
             "@type": "Person",
             "name": "Kyungwon Cho",
             "url": "https://kyungwoncho.github.io",
+            "affiliation": {
+              "@type": "Organization",
+              "name": "Seoul National University"
+            }
+          },
+          {
+            "@type": "Person",
+            "name": "Jeonghyeon Na",
+            "url": "https://nagooon.github.io",
             "affiliation": {
               "@type": "Organization",
               "name": "Seoul National University"
@@ -217,7 +231,7 @@
         "datePublished": "2026-03-31",
         "publisher": {
           "@type": "Organization",
-          "name": "arXiv"
+          "name": "Advances in Neural Information Processing Systems (NeurIPS)"
         },
         "url": "https://kyungwoncho.github.io/OmniEgoCap",
         "image": "https://kyungwoncho.github.io/OmniEgoCap/static/images/social_preview.png",
@@ -228,7 +242,7 @@
           "Machine Learning",
           "Computer Vision"
         ],
-        "abstract": "The proliferation of commercial egocentric devices offers a unique lens into human behavior, yet reconstructing full-body 3D motion remains difficult due to frequent self-occlusion and the out-of-sight nature of the wearer's limbs. While head and hand trajectories provide sparse anchor points, current methods often overfit to specific hardware optics or rely on expensive, post-hoc optimizations that compromise motion naturalness. In this paper, we present OmniEgoCap, a unified diffusion framework that scales egocentric reconstruction to diverse capture setups. By shifting from short-term windowed estimation to sequence-level inference, our method captures a global perspective and recovers invariant physical attributes, such as height and body proportions, that provide critical constraints for disambiguating head-only cues. To ensure hardware-agnostic generalization, we introduce a geometry-aware visibility augmentation strategy that treats intermittent hand appearances as principled geometric constraints rather than missing data. Our architecture jointly predicts temporally coherent motion and consistent body shape, establishing a new state-of-the-art on public benchmarks and demonstrating robust performance across diverse, in-the-wild environments.",
+        "abstract": "Commercial egocentric devices capture human behavior in everyday settings, yet full-body motion reconstruction must generalize across diverse cameras and mountings. This is challenging because head trajectories under-determine body motion, while hand observations are intermittent and camera-dependent: a hand may disappear simply because it has left the camera’s field of view. Existing methods treat such absences as missing data, relying on fixed visibility regimes or post-hoc optimization, and fail to generalize across devices. We present OmniEgoCap, a sequence-level diffusion framework for device-agnostic egocentric full-body motion reconstruction. Our key insight is that egocentric videos contain sequence-level evidence about both the wearer and the camera-induced visibility structure, enabling OmniEgoCap to infer consistent body shape and coherent motion from sparse head and hand cues. To prevent overfitting to a single camera setup, we further introduce geometry-aware visibility augmentation, which synthesizes visibility patterns from realistic variations in camera geometry. We also present OmniEgoDB, the first mocap benchmark with ground-truth motion captured across multiple consumer egocentric devices. Experiments on synthetic, real-device, and in-the-wild settings demonstrate superior motion reconstruction, robust cross-device generalization, and coherent in-the-wild results.",
         "isAccessibleForFree": true,
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "mainEntity": {
@@ -281,7 +295,7 @@
                 <h1 class="title is-1 publication-title">
                   <span class="dnerf">OmniEgoCap</span>:
                   <br />
-                  Device-Agnostic Sequence-Level Egocentric Motion
+                  Camera-Agnostic Sequence-Level Egocentric Motion
                   Reconstruction
                 </h1>
                 <div class="is-size-4 publication-authors">
@@ -289,6 +303,11 @@
                   <span class="author-block">
                     <a href="https://kyungwoncho.github.io" target="_blank">
                       Kyungwon Cho </a
+                    >,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://nagooon.github.io" target="_blank">
+                      Jeonghyeon Na </a
                     >,
                   </span>
                   <span class="author-block">
@@ -303,6 +322,7 @@
                   <span class="author-block">
                     Seoul National University
                     <br />
+                    <b>NeurIPS 2026</b>
                   </span>
                 </div>
 
@@ -399,29 +419,32 @@
               <div class="content has-text-justified">
                 <!-- TODO: Replace with your paper abstract -->
                 <p>
-                  The proliferation of commercial egocentric devices offers a
-                  unique lens into human behavior, yet reconstructing full-body
-                  3D motion remains difficult due to frequent self-occlusion and
-                  the "out-of-sight" nature of the wearer’s limbs. While head
-                  and hand trajectories provide sparse anchor points, current
-                  methods often overfit to specific hardware optics or rely on
-                  expensive, post-hoc optimizations that compromise motion
-                  naturalness. In this paper, we present
-                  <span class="dnerf">OmniEgoCap</span>, a unified diffusion
-                  framework that scales egocentric reconstruction to diverse
-                  capture setups. By shifting from short-term windowed
-                  estimation to sequence-level inference, our method captures a
-                  global perspective and recovers invariant physical attributes,
-                  such as height and body proportions, that provide critical
-                  constraints for disambiguating head-only cues. To ensure
-                  hardware-agnostic generalization, we introduce a
-                  geometry-aware visibility augmentation strategy that treats
-                  intermittent hand appearances as principled geometric
-                  constraints rather than missing data. Our architecture jointly
-                  predicts temporally coherent motion and consistent body shape,
-                  establishing a new state-of-the-art on public benchmarks and
-                  demonstrating robust performance across diverse, in-the-wild
-                  environments.
+                  Commercial egocentric devices capture human behavior in
+                  everyday settings, yet full-body motion reconstruction must
+                  generalize across diverse cameras and mountings. This is
+                  challenging because head trajectories under-determine body
+                  motion, while hand observations are intermittent and
+                  camera-dependent: a hand may disappear simply because it has
+                  left the camera’s field of view. Existing methods treat such
+                  absences as missing data, relying on fixed visibility regimes
+                  or post-hoc optimization, and fail to generalize across
+                  devices. We present <span class="dnerf">OmniEgoCap</span>, a
+                  sequence-level diffusion framework for device-agnostic
+                  egocentric full-body motion reconstruction. Our key insight is
+                  that egocentric videos contain sequence-level evidence about
+                  both the wearer and the camera-induced visibility structure,
+                  enabling <span class="dnerf">OmniEgoCap</span> to infer
+                  consistent body shape and coherent motion from sparse head and
+                  hand cues. To prevent overfitting to a single camera setup, we
+                  further introduce geometry-aware visibility augmentation,
+                  which synthesizes visibility patterns from realistic
+                  variations in camera geometry. We also present
+                  <span class="dnerf">OmniEgoDB</span>, the first mocap
+                  benchmark with ground-truth motion captured across multiple
+                  consumer egocentric devices. Experiments on synthetic,
+                  real-device, and in-the-wild settings demonstrate superior
+                  motion reconstruction, robust cross-device generalization, and
+                  coherent in-the-wild results.
                 </p>
               </div>
             </div>
@@ -730,11 +753,11 @@
               <span class="copy-text">Copy</span>
             </button>
           </div>
-          <pre id="bibtex-code"><code>@article{cho2025omniegocap,
-  title={OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction},
-  author={Cho, Kyungwon and Joo, Hanbyul},
-  journal={arXiv preprint arXiv:2512.19283},
-  year={2025},
+          <pre id="bibtex-code"><code>@inproceedings{cho2026omniegocap,
+  title={OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction},
+  author={Cho, Kyungwon and Na, Jeonghyeon and Joo, Hanbyul},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2026},
 }</code></pre>
         </div>
       </section>
