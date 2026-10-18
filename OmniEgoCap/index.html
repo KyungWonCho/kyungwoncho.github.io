@@ -19,11 +19,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Primary Meta Tags -->
-    <meta
-      name="title"
-      content="OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction"
-    />
+    <title>OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction</title>
+
     <meta
       name="description"
       content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups."
@@ -33,60 +30,46 @@
       content="OmniEgoCap, Egocentric Vision, Motion Capture, Motion Reconstruction, Diffusion Models, Computer Vision, AI"
     />
     <meta name="author" content="Kyungwon Cho, Jeonghyeon Na, Hanbyul Joo" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
+    <link rel="canonical" href="https://kyungwoncho.github.io/OmniEgoCap/" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)" />
+    <script>
+      // light/dark choice from the nav button; without one the page follows the system
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
 
-    <!-- Open Graph / Facebook -->
+    <!-- Link previews -->
     <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="Seoul National University" />
+    <meta property="og:site_name" content="OmniEgoCap" />
     <meta
       property="og:title"
-      content="OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
     />
     <meta
       property="og:description"
       content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups."
     />
-    <meta
-      property="og:url"
-      content="https://kyungwoncho.github.io/OmniEgoCap"
-    />
+    <meta property="og:url" content="https://kyungwoncho.github.io/OmniEgoCap/" />
     <meta
       property="og:image"
       content="https://kyungwoncho.github.io/OmniEgoCap/static/images/social_preview.png"
     />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="OmniEgoCap - Research Preview" />
-    <meta
-      property="article:published_time"
-      content="2026-03-31T18:29:41.000Z"
-    />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1008" />
+    <meta property="og:image:alt" content="OmniEgoCap teaser" />
+    <meta property="article:published_time" content="2026-03-31T18:29:41.000Z" />
     <meta property="article:author" content="Kyungwon Cho" />
-    <meta property="article:section" content="Research" />
-    <meta property="article:tag" content="Egocentric Motion Capture" />
-    <meta property="article:tag" content="Diffusion Models" />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction"
-    />
-    <meta
-      name="twitter:description"
-      content="OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups."
-    />
-    <meta
-      name="twitter:image"
-      content="https://kyungwoncho.github.io/OmniEgoCap/static/images/social_preview.png"
-    />
-    <meta name="twitter:image:alt" content="OmniEgoCap - Research Preview" />
+    <meta name="twitter:creator" content="@kyungwon__cho" />
 
-    <!-- Academic/Research Specific -->
+    <!-- Google Scholar -->
     <meta
       name="citation_title"
-      content="OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction"
+      content="OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction"
     />
     <meta name="citation_author" content="Cho, Kyungwon" />
     <meta name="citation_author" content="Na, Jeonghyeon" />
@@ -99,133 +82,61 @@
     <meta name="citation_arxiv_id" content="2512.19283" />
     <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2512.19283" />
 
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#2563eb" />
-    <meta name="msapplication-TileColor" content="#2563eb" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
 
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://ajax.googleapis.com" />
-    <link rel="preconnect" href="https://documentcloud.adobe.com" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-
-    <!-- TODO: Replace with your paper title and authors -->
-    <title>OmniEgoCap</title>
-
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
-    <link rel="apple-touch-icon" href="static/images/favicon.ico" />
-
-    <!-- Critical CSS - Load synchronously -->
-    <link rel="stylesheet" href="static/css/bulma.min.css" />
-    <link rel="stylesheet" href="static/css/index.css" />
-
-    <!-- Non-critical CSS - Load asynchronously -->
     <link
-      rel="preload"
-      href="static/css/bulma-carousel.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <link
-      rel="preload"
-      href="static/css/bulma-slider.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <link
-      rel="preload"
-      href="static/css/fontawesome.all.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-
-    <!-- Fallback for browsers that don't support preload -->
-    <noscript>
-      <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
-      <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
-      <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-      />
-    </noscript>
-
-    <!-- Fonts - Optimized loading -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
     />
+    <link rel="stylesheet" href="static/css/page.css" />
+    <link rel="stylesheet" href="static/css/sections.css" />
+    <script defer src="static/js/page.js"></script>
+    <script defer src="static/js/sections.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="static/js/hero3d.js"></script>
+    <script>
+      // browsers that cannot run the 3D module get the still image instead of an empty canvas
+      setTimeout(() => {
+        const hero = document.querySelector("[data-hero3d]");
+        if (hero && !hero.dataset.ready) hero.classList.add("no-webgl");
+      }, 6000);
+    </script>
 
-    <!-- Defer non-critical JavaScript -->
-    <script
-      defer
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
-    <script
-      defer
-      src="https://documentcloud.adobe.com/view-sdk/main.js"
-    ></script>
-    <script defer src="static/js/fontawesome.all.min.js"></script>
-    <script defer src="static/js/bulma-carousel.min.js"></script>
-    <script defer src="static/js/bulma-slider.min.js"></script>
-    <script defer src="static/js/index.js"></script>
-
-    <!-- Structured Data for Academic Papers -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ScholarlyArticle",
-        "headline": "OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction",
+        "headline": "OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction",
         "description": "OmniEgoCap is a sequence-level diffusion framework that leverages long-range physical invariants and geometry-aware augmentation to reconstruct consistent 3D full-body motion across diverse egocentric camera setups.",
         "author": [
           {
             "@type": "Person",
             "name": "Kyungwon Cho",
             "url": "https://kyungwoncho.github.io",
-            "affiliation": {
-              "@type": "Organization",
-              "name": "Seoul National University"
-            }
+            "affiliation": { "@type": "Organization", "name": "Seoul National University" }
           },
           {
             "@type": "Person",
             "name": "Jeonghyeon Na",
             "url": "https://nagooon.github.io",
-            "affiliation": {
-              "@type": "Organization",
-              "name": "Seoul National University"
-            }
+            "affiliation": { "@type": "Organization", "name": "Seoul National University" }
           },
           {
             "@type": "Person",
             "name": "Hanbyul Joo",
             "url": "https://jhugestar.github.io",
-            "affiliation": {
-              "@type": "Organization",
-              "name": "Seoul National University"
-            }
+            "affiliation": { "@type": "Organization", "name": "Seoul National University" }
           }
         ],
         "datePublished": "2026-03-31",
@@ -233,7 +144,7 @@
           "@type": "Organization",
           "name": "Advances in Neural Information Processing Systems (NeurIPS)"
         },
-        "url": "https://kyungwoncho.github.io/OmniEgoCap",
+        "url": "https://kyungwoncho.github.io/OmniEgoCap/",
         "image": "https://kyungwoncho.github.io/OmniEgoCap/static/images/social_preview.png",
         "keywords": [
           "Egocentric Motion Capture",
@@ -244,568 +155,435 @@
         ],
         "abstract": "Commercial egocentric devices capture human behavior in everyday settings, yet full-body motion reconstruction must generalize across diverse cameras and mountings. This is challenging because head trajectories under-determine body motion, while hand observations are intermittent and camera-dependent: a hand may disappear simply because it has left the camera’s field of view. Existing methods treat such absences as missing data, relying on fixed visibility regimes or post-hoc optimization, and fail to generalize across devices. We present OmniEgoCap, a sequence-level diffusion framework for device-agnostic egocentric full-body motion reconstruction. Our key insight is that egocentric videos contain sequence-level evidence about both the wearer and the camera-induced visibility structure, enabling OmniEgoCap to infer consistent body shape and coherent motion from sparse head and hand cues. To prevent overfitting to a single camera setup, we further introduce geometry-aware visibility augmentation, which synthesizes visibility patterns from realistic variations in camera geometry. We also present OmniEgoDB, the first mocap benchmark with ground-truth motion captured across multiple consumer egocentric devices. Experiments on synthetic, real-device, and in-the-wild settings demonstrate superior motion reconstruction, robust cross-device generalization, and coherent in-the-wild results.",
         "isAccessibleForFree": true,
-        "license": "https://creativecommons.org/licenses/by/4.0/",
-        "mainEntity": {
-          "@type": "WebPage",
-          "@id": "https://kyungwoncho.github.io/OmniEgoCap"
-        },
         "about": [
-          {
-            "@type": "Thing",
-            "name": "Egocentric Vision"
-          },
-          {
-            "@type": "Thing",
-            "name": "Human Motion Capture"
-          }
+          { "@type": "Thing", "name": "Egocentric Vision" },
+          { "@type": "Thing", "name": "Human Motion Capture" }
         ]
       }
     </script>
-
-    <!-- Website/Organization Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Seoul National University",
-        "url": "https://www.snu.ac.kr",
-        "logo": "https://kyungwoncho.github.io/OmniEgoCap/static/images/favicon.ico",
-        "sameAs": ["https://github.com/KyungWonCho"]
-      }
-    </script>
   </head>
-  <body>
-    <!-- Scroll to Top Button -->
-    <button
-      class="scroll-to-top"
-      onclick="scrollToTop()"
-      title="Scroll to top"
-      aria-label="Scroll to top"
-    >
-      <i class="fas fa-chevron-up"></i>
-    </button>
+  <body class="hero-dark">
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="nav-brand" href="#top">OmniEgoCap</a>
+        <nav class="nav-links" aria-label="Sections">
+          <a href="#top">Overview</a>
+          <a href="#abstract">Abstract</a>
+          <a href="#why">Method</a>
+          <a href="#omniegodb">OmniEgoDB</a>
+          <a href="#demo">In-the-Wild Demo</a>
+          <a href="#bibtex">BibTeX</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" /></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" /></svg>
+        </button>
+      </div>
+    </header>
 
-    <main id="main-content">
-      <section class="hero">
-        <div class="hero-body">
-          <div class="container is-max-desktop">
-            <div class="columns is-centered">
-              <div class="column has-text-centered">
-                <!-- TODO: Replace with your paper title -->
-                <h1 class="title is-1 publication-title">
-                  <span class="dnerf">OmniEgoCap</span>:
-                  <br />
-                  Camera-Agnostic Sequence-Level Egocentric Motion
-                  Reconstruction
-                </h1>
-                <div class="is-size-4 publication-authors">
-                  <!-- TODO: Replace with your paper authors and their personal links -->
-                  <span class="author-block">
-                    <a href="https://kyungwoncho.github.io" target="_blank">
-                      Kyungwon Cho </a
-                    >,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://nagooon.github.io" target="_blank">
-                      Jeonghyeon Na </a
-                    >,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://jhugestar.github.io" target="_blank">
-                      Hanbyul Joo
-                    </a>
-                  </span>
-                </div>
-
-                <div class="is-size-5 publication-authors">
-                  <!-- TODO: Replace with your institution and conference/journal info -->
-                  <span class="author-block">
-                    Seoul National University
-                    <br />
-                    <b>NeurIPS 2026</b>
-                  </span>
-                </div>
-
-                <div class="column has-text-centered">
-                  <div class="publication-links">
-                    <!-- TODO: Update with your arXiv paper ID -->
-                    <span class="link-block">
-                      <a
-                        href="static/pdfs/OmniEgoCap.pdf"
-                        target="_blank"
-                        class="external-link button is-normal is-rounded is-dark"
-                      >
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Update with your arXiv paper ID -->
-                    <span class="link-block">
-                      <a
-                        href="https://arxiv.org/abs/2512.19283"
-                        target="_blank"
-                        class="external-link button is-normal is-rounded is-dark"
-                      >
-                        <span class="icon">
-                          <i class="ai ai-arxiv"></i>
-                        </span>
-                        <span>arXiv</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Replace with your GitHub repository URL -->
-                    <span class="link-block">
-                      <a
-                        href="https://github.com/KyungWonCho/OmniEgoCap"
-                        target="_blank"
-                        class="external-link button is-normal is-rounded is-dark"
-                        style="pointer-events: none; opacity: 0.6"
-                      >
-                        <span class="icon">
-                          <i class="fab fa-github"></i>
-                        </span>
-                        <span>Code (Coming Soon)</span>
-                      </a>
-                    </span>
-                  </div>
-                </div>
-              </div>
+    <main id="top">
+      <section class="hero hero3d" data-hero3d>
+        <div class="hero3d-stage">
+          <canvas aria-label="Interactive 3D view of an OmniEgoDB capture: the OmniEgoCap reconstruction, the device on the head, the observed wrists and the Xsens ground truth"></canvas>
+          <p class="hero3d-status" aria-live="polite">Loading 3D scene…</p>
+          <div class="hero3d-hud">
+            <div class="hud-devices" role="group" aria-label="Device">
+              <button class="is-active" aria-pressed="true" data-clip="aria_stereo">Aria (Stereo)</button>
+              <button aria-pressed="false" data-clip="aria_rgb">Aria (RGB)</button>
+              <button aria-pressed="false" data-clip="gopro">GoPro</button>
+              <button aria-pressed="false" data-clip="quest">Meta Quest 3</button>
+            </div>
+            <div class="hud-player">
+              <button class="hud-play" type="button" aria-label="Pause"><span></span></button>
+              <input class="hud-scrub" type="range" min="0" max="10" step="0.01" value="0" aria-label="Time" />
+              <span class="hud-time">0:00 / 0:09</span>
             </div>
           </div>
+          <div class="hero3d-side">
+            <a class="hero3d-source" href="#omniegodb"><b>OmniEgoDB</b> <span>recording</span></a>
+            <figure class="hero3d-video">
+              <span class="input-badge">Input</span>
+              <video muted playsinline preload="auto" aria-label="Input video of the selected device"></video>
+              <p class="hero3d-novideo">Meta Quest 3 records no camera video. Its input is the headset's own head and hand tracking.</p>
+              <figcaption></figcaption>
+            </figure>
+          <div class="hero3d-legend">
+            <p class="legend-head legend-input">Input <span>head &amp; wrist tracking</span></p>
+            <span><i class="swatch swatch-input"></i>Head &amp; its path</span>
+            <span class="hand" data-hand="0"><i>L</i>Left wrist, when seen</span>
+            <span class="hand" data-hand="1"><i>R</i>Right wrist, when seen</span>
+            <p class="legend-head">Output</p>
+            <span><i class="swatch swatch-body"></i>OmniEgoCap full body</span>
+            <label><input class="hud-gt" type="checkbox" /><i class="swatch swatch-gt"></i>Ground truth (Xsens)</label>
+            <p class="hero3d-hint">Drag to rotate · <kbd class="zoom-key">Ctrl</kbd> + scroll to zoom</p>
+          </div>
+          </div>
         </div>
-      </section>
-
-      <!-- Teaser video-->
-      <section class="hero teaser">
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <!-- TODO: Replace with your video description -->
-            <h2 class="subtitle has-text-centered">
-              <b>TL;DR:</b> <span class="dnerf">OmniEgoCap</span> is a
-              sequence-level diffusion framework that leverages <br />
-              long-range physical invariants and geometry-aware augmentation to
-              reconstruct <br />consistent 3D full-body motion across diverse
-              egocentric camera setups.
-            </h2>
-            <!-- TODO: Replace with your teaser video -->
-            <video
-              poster=""
-              id="tree"
-              autoplay
-              controls
-              muted
-              loop
-              playsinline
-              height="100%"
-              preload="metadata"
-            >
-              <!-- TODO: Add your video file path here -->
-              <source src="static/videos/teaser.mp4" type="video/mp4" />
-            </video>
+        <div class="hero3d-copy">
+          <p class="venue">NeurIPS 2026</p>
+          <h1 class="title">
+            <span class="title-name">OmniEgoCap</span>
+            <span class="title-sub">Device-Agnostic Sequence-Level Egocentric Motion Reconstruction</span>
+          </h1>
+          <p class="authors">
+            <a href="https://kyungwoncho.github.io/">Kyungwon Cho</a>
+            <a href="https://nagooon.github.io/">Jeonghyeon Na</a>
+            <a href="https://jhugestar.github.io/">Hanbyul Joo</a>
+          </p>
+          <p class="affil">Seoul National University</p>
+          <div class="links">
+            <a class="btn btn-primary" href="static/pdfs/OmniEgoCap.pdf">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+              Paper
+            </a>
+            <a class="btn" href="https://arxiv.org/abs/2512.19283">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              arXiv
+            </a>
+            <a class="btn" href="https://github.com/KyungWonCho/OmniEgoCap">
+              <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              Code
+            </a>
+            <a class="btn" href="https://huggingface.co/datasets/cscandkswon/OmniEgoDB">
+              <span class="icon icon-hf" aria-hidden="true">🤗</span>
+              OmniEgoDB
+            </a>
+            <a class="btn" href="#bibtex">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
+              BibTeX
+            </a>
           </div>
         </div>
       </section>
-      <!-- End teaser video -->
 
-      <!-- Paper abstract -->
-      <section class="section hero is-light">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Abstract</h2>
-              <div class="content has-text-justified">
-                <!-- TODO: Replace with your paper abstract -->
+      <section id="overview" class="section section-overview">
+        <p class="tldr">
+          <span class="tldr-label">TL;DR:</span>
+          <span class="name">OmniEgoCap</span> is a sequence-level diffusion
+          framework that leverages long-range physical invariants and
+          geometry-aware augmentation to reconstruct consistent 3D full-body
+          motion across diverse egocentric camera setups.
+        </p>
+      </section>
+
+      <section id="abstract" class="section">
+        <div class="wrap">
+          <h2 class="section-title">Abstract</h2>
+          <p class="abstract">
+            Commercial egocentric devices capture human behavior in everyday
+            settings, yet full-body motion reconstruction must generalize across
+            diverse cameras and mountings. This is challenging because head
+            trajectories under-determine body motion, while hand observations
+            are intermittent and camera-dependent: a hand may disappear simply
+            because it has left the camera’s field of view. Existing methods
+            treat such absences as missing data, relying on fixed visibility
+            regimes or post-hoc optimization, and fail to generalize across
+            devices. We present <span class="name">OmniEgoCap</span>, a
+            sequence-level diffusion framework for device-agnostic egocentric
+            full-body motion reconstruction. Our key insight is that egocentric
+            videos contain sequence-level evidence about both the wearer and the
+            camera-induced visibility structure, enabling
+            <span class="name">OmniEgoCap</span> to infer consistent body shape
+            and coherent motion from sparse head and hand cues. To prevent
+            overfitting to a single camera setup, we further introduce
+            geometry-aware visibility augmentation, which synthesizes visibility
+            patterns from realistic variations in camera geometry. We also
+            present <span class="name">OmniEgoDB</span>, the first mocap
+            benchmark with ground-truth motion captured across multiple consumer
+            egocentric devices. Experiments on synthetic, real-device, and
+            in-the-wild settings demonstrate superior motion reconstruction,
+            robust cross-device generalization, and coherent in-the-wild
+            results.
+          </p>
+        </div>
+      </section>
+
+      <section id="why" class="section">
+        <div class="wrap">
+          <h2 class="section-title">Why sequence-level?</h2>
+          <p class="lead">
+            The first-person view rarely captures the full body. A sequence,
+            however, carries long-range evidence about both <em>who the wearer is</em>
+            and <em>how the camera observes them</em>.
+          </p>
+        </div>
+        <div class="wrap-wide">
+          <div class="why-list">
+            <article class="why-block" id="why-ambiguity">
+              <div class="why-text">
+                <span class="why-num">01</span>
+                <h3>A short window is ambiguous</h3>
                 <p>
-                  Commercial egocentric devices capture human behavior in
-                  everyday settings, yet full-body motion reconstruction must
-                  generalize across diverse cameras and mountings. This is
-                  challenging because head trajectories under-determine body
-                  motion, while hand observations are intermittent and
-                  camera-dependent: a hand may disappear simply because it has
-                  left the camera’s field of view. Existing methods treat such
-                  absences as missing data, relying on fixed visibility regimes
-                  or post-hoc optimization, and fail to generalize across
-                  devices. We present <span class="dnerf">OmniEgoCap</span>, a
-                  sequence-level diffusion framework for device-agnostic
-                  egocentric full-body motion reconstruction. Our key insight is
-                  that egocentric videos contain sequence-level evidence about
-                  both the wearer and the camera-induced visibility structure,
-                  enabling <span class="dnerf">OmniEgoCap</span> to infer
-                  consistent body shape and coherent motion from sparse head and
-                  hand cues. To prevent overfitting to a single camera setup, we
-                  further introduce geometry-aware visibility augmentation,
-                  which synthesizes visibility patterns from realistic
-                  variations in camera geometry. We also present
-                  <span class="dnerf">OmniEgoDB</span>, the first mocap
-                  benchmark with ground-truth motion captured across multiple
-                  consumer egocentric devices. Experiments on synthetic,
-                  real-device, and in-the-wild settings demonstrate superior
-                  motion reconstruction, robust cross-device generalization, and
-                  coherent in-the-wild results.
+                  A hand may be missing because of occlusion, a tracking
+                  failure, or simply because it left the camera's view. A low
+                  head may mean a shorter wearer or a crouch. A few frames
+                  cannot tell these apart.
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End paper abstract -->
+              <!-- Videos in static/oec/ are web encodes of camera-ready/project_page/blender/renders/final (see README).
+                   [data-autoplay]: sections.js plays them while on screen, never under prefers-reduced-motion. -->
+              <figure class="media-slot">
+                <video data-autoplay muted loop playsinline preload="none" width="1920" height="1080" poster="static/oec/posters/why_ambiguity3.jpg" src="static/oec/videos/why_ambiguity3.mp4" aria-label="A tall wearer crouching and a short wearer standing (AMASS motion), overlapping: for 1.5 s their head path and wrists are the same, so the egocentric input cannot tell them apart"></video>
+              </figure>
+            </article>
 
-      <!-- In-the-Wild Demo -->
-      <section class="hero">
-        <div class="hero-body">
-          <div class="container is-max-desktop">
-            <h2 class="title is-3 is-centered has-text-centered">
-              In-the-Wild Demo
-            </h2>
-            <div id="demo-carousel" class="carousel results-carousel">
-              <div class="item item-video1">
-                <video
-                  poster=""
-                  id="demo1"
-                  controls
-                  muted
-                  loop
-                  height="100%"
-                  preload="metadata"
-                >
-                  <source src="static/videos/demo1.mp4" type="video/mp4" />
-                </video>
-                <div class="speed-control">
-                  <span class="speed-label">Speed:</span>
-                  <button class="speed-btn is-active" onclick="setDemoSpeed(1)">
-                    1×
-                  </button>
-                  <button class="speed-btn" onclick="setDemoSpeed(2)">
-                    2×
-                  </button>
-                  <button class="speed-btn" onclick="setDemoSpeed(4)">
-                    4×
-                  </button>
-                </div>
-              </div>
-
-              <div class="item item-video2">
-                <video
-                  poster=""
-                  id="demo2"
-                  controls
-                  muted
-                  loop
-                  height="100%"
-                  preload="metadata"
-                >
-                  <source src="static/videos/demo2.mp4" type="video/mp4" />
-                </video>
-                <div class="speed-control">
-                  <span class="speed-label">Speed:</span>
-                  <button class="speed-btn is-active" onclick="setDemoSpeed(1)">
-                    1×
-                  </button>
-                  <button class="speed-btn" onclick="setDemoSpeed(2)">
-                    2×
-                  </button>
-                  <button class="speed-btn" onclick="setDemoSpeed(4)">
-                    4×
-                  </button>
-                </div>
-              </div>
-
-              <div class="item item-video3">
-                <video
-                  poster=""
-                  id="demo3"
-                  controls
-                  muted
-                  loop
-                  height="100%"
-                  preload="metadata"
-                >
-                  <source src="static/videos/demo3.mp4" type="video/mp4" />
-                </video>
-                <div class="speed-control">
-                  <span class="speed-label">Speed:</span>
-                  <button class="speed-btn is-active" onclick="setDemoSpeed(1)">
-                    1×
-                  </button>
-                  <button class="speed-btn" onclick="setDemoSpeed(2)">
-                    2×
-                  </button>
-                  <button class="speed-btn" onclick="setDemoSpeed(4)">
-                    4×
-                  </button>
-                </div>
-              </div>
-
-              <div class="item item-video4">
-                <video
-                  poster=""
-                  id="demo4"
-                  controls
-                  muted
-                  loop
-                  height="100%"
-                  preload="metadata"
-                >
-                  <source src="static/videos/demo4.mp4" type="video/mp4" />
-                </video>
-                <div class="speed-control">
-                  <span class="speed-label">Speed:</span>
-                  <button class="speed-btn is-active" onclick="setDemoSpeed(1)">
-                    1×
-                  </button>
-                  <button class="speed-btn" onclick="setDemoSpeed(2)">
-                    2×
-                  </button>
-                  <button class="speed-btn" onclick="setDemoSpeed(4)">
-                    4×
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Comparison -->
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="container is-max-desktop">
-            <h2 class="title is-3 is-centered has-text-centered">
-              Comparison with Baseline
-            </h2>
-            <div id="results-carousel" class="carousel results-carousel">
-              <div class="item item-video1">
-                <video
-                  poster=""
-                  id="video1"
-                  controls
-                  muted
-                  loop
-                  height="100%"
-                  preload="metadata"
-                >
-                  <source src="static/videos/comp1.mp4" type="video/mp4" />
-                </video>
-                <div class="speed-control">
-                  <span class="speed-label">Speed:</span>
-                  <button
-                    class="speed-btn comp-speed is-active"
-                    onclick="setCompSpeed(1)"
-                  >
-                    1×
-                  </button>
-                  <button
-                    class="speed-btn comp-speed"
-                    onclick="setCompSpeed(2)"
-                  >
-                    2×
-                  </button>
-                  <button
-                    class="speed-btn comp-speed"
-                    onclick="setCompSpeed(4)"
-                  >
-                    4×
-                  </button>
-                </div>
-              </div>
-              <div class="item item-video2">
-                <video
-                  poster=""
-                  id="video2"
-                  controls
-                  muted
-                  loop
-                  height="100%"
-                  preload="metadata"
-                >
-                  <source src="static/videos/comp2.mp4" type="video/mp4" />
-                </video>
-                <div class="speed-control">
-                  <span class="speed-label">Speed:</span>
-                  <button
-                    class="speed-btn comp-speed is-active"
-                    onclick="setCompSpeed(1)"
-                  >
-                    1×
-                  </button>
-                  <button
-                    class="speed-btn comp-speed"
-                    onclick="setCompSpeed(2)"
-                  >
-                    2×
-                  </button>
-                  <button
-                    class="speed-btn comp-speed"
-                    onclick="setCompSpeed(4)"
-                  >
-                    4×
-                  </button>
-                </div>
-              </div>
-              <div class="item item-video3">
-                <video
-                  poster=""
-                  id="video3"
-                  controls
-                  muted
-                  loop
-                  height="100%"
-                  preload="metadata"
-                >
-                  <source src="static/videos/comp3.mp4" type="video/mp4" />
-                </video>
-                <div class="speed-control">
-                  <span class="speed-label">Speed:</span>
-                  <button
-                    class="speed-btn comp-speed is-active"
-                    onclick="setCompSpeed(1)"
-                  >
-                    1×
-                  </button>
-                  <button
-                    class="speed-btn comp-speed"
-                    onclick="setCompSpeed(2)"
-                  >
-                    2×
-                  </button>
-                  <button
-                    class="speed-btn comp-speed"
-                    onclick="setCompSpeed(4)"
-                  >
-                    4×
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="hero">
-        <div class="hero-body">
-          <div class="container is-max-desktop">
-            <h2 class="title is-3 is-centered has-text-centered">
-              Method Overview
-            </h2>
-            <div class="item mb-5">
-              <img
-                src="static/images/architecture.png"
-                alt="Method overview"
-                loading="lazy"
-              />
-              <div class="content has-text-justified mb-1">
+            <article class="why-block" id="why-fov">
+              <div class="why-text">
+                <span class="why-num">02</span>
+                <h3>Each device sees a different region</h3>
                 <p>
-                  Our framework uses a <b>conditional diffusion model</b> to
-                  reconstruct full-body motion from <b>head trajectory</b> and
-                  <b>intermittently visible hands</b> in egocentric video. Built
-                  on an <b>encoder-decoder transformer</b> with
-                  <b>local attention</b>, the model efficiently handles long
-                  motion sequences while preserving local motion details. Beyond
-                  short-term estimation, we perform
-                  <b>sequence-level inference</b> to capture a more global
-                  perspective, including a <b>single body shape</b> and
-                  <b>camera-dependent visibility cues</b>, enabling temporally
-                  coherent reconstructions across diverse egocentric device
-                  configurations.
+                  Field of view and mounting decide where a hand drops out of
+                  sight: around the wearer's head, each device covers a
+                  different region.
                 </p>
               </div>
-            </div>
+              <!-- One device toggle swaps the video (Blender: the wearer, the device and the region it covers on a sphere
+                   around the head), one file per button: static/oec/videos/why_devices_{aria_stereo|aria_rgb|gopro|quest|all}.mp4,
+                   posters static/oec/posters/why_devices_{...}.jpg. The earlier 2D yaw-pitch map (static/data/fov.json,
+                   tools/oec/make_fov_json.py) is no longer on the page; the files stay in the repository. -->
+              <div class="fov-scene" data-fov-scene>
+                <div class="fov-devices" role="group" aria-label="Device shown">
+                  <button type="button" aria-pressed="true" data-track="aria_stereo"><i class="fov-key" aria-hidden="true"></i>Aria (Stereo)</button>
+                  <button type="button" aria-pressed="false" data-track="aria_rgb"><i class="fov-key" aria-hidden="true"></i>Aria (RGB)</button>
+                  <button type="button" aria-pressed="false" data-track="gopro"><i class="fov-key" aria-hidden="true"></i>GoPro</button>
+                  <button type="button" aria-pressed="false" data-track="quest"><i class="fov-key" aria-hidden="true"></i>Quest</button>
+                  <button type="button" aria-pressed="false" data-track="all" class="fov-all"><i class="fov-key" aria-hidden="true"></i>Overlay all</button>
+                </div>
+                <figure class="media-slot fov-video" data-video="static/oec/videos/why_devices_{track}.mp4" data-poster="static/oec/posters/why_devices_{track}.jpg">
+                  <video data-autoplay muted loop playsinline preload="none" width="1920" height="1080" poster="static/oec/posters/why_devices_aria_stereo.jpg" src="static/oec/videos/why_devices_aria_stereo.mp4" aria-label="Aria (Stereo) on the wearer's head and the region it covers, drawn on a sphere"></video>
+                </figure>
+              </div>
+            </article>
 
-            <div class="item mb-5">
-              <img
-                src="static/images/augmentation.png"
-                alt="Geometry-aware augmentation"
-                loading="lazy"
-              />
-              <div class="content has-text-justified mb-1">
+            <article class="why-block" id="why-hands">
+              <div class="why-text">
+                <span class="why-num">03</span>
+                <h3>An unseen hand is still a cue</h3>
                 <p>
-                  To enable <b>device-agnostic generalization</b>, we introduce
-                  a stochastic <b>geometry-aware augmentation</b> strategy that
-                  exposes the model to diverse egocentric camera geometries
-                  during training. By varying <b>field-of-view</b>,
-                  <b>camera tilt</b>, <b>aspect ratio</b>, and the
-                  <b>resulting hand visibility patterns</b>, the model learns to
-                  interpret intermittent hand cues under different viewing
-                  conditions. This enables robust reconstruction on
-                  <b>unseen devices</b> with different camera setups,
-                  <b>without device-specific retraining</b>.
+                  A missing hand is not merely absent evidence. Across time,
+                  visibility and invisibility reveal what the camera can and
+                  cannot see. <span class="name">OmniEgoCap</span> infers one
+                  visibility context for the whole sequence, from when and where
+                  hands appear and disappear.
                 </p>
               </div>
-            </div>
+              <figure class="media-slot">
+                <video data-autoplay muted loop playsinline preload="none" width="1920" height="1200" poster="static/oec/posters/why_hands2.jpg" src="static/oec/videos/why_hands2.mp4" aria-label="Aria (Stereo) and GoPro: now, each wrist is marked visible (green) or not (grey) on a sphere around the head; accumulated over three minutes of the recording, the visible and not-visible regions and the boundary between them differ by device"></video>
+              </figure>
+            </article>
+
+            <article class="why-block" id="why-shape">
+              <div class="why-text">
+                <span class="why-num">04</span>
+                <h3>Body shape belongs to the sequence</h3>
+                <p>
+                  Body shape stays fixed over a sequence, while evidence for
+                  height and proportions appears unevenly, mostly in poses such
+                  as standing. <span class="name">OmniEgoCap</span> infers one
+                  consistent body shape for the whole sequence.
+                </p>
+              </div>
+              <figure class="media-slot">
+                <video data-autoplay muted loop playsinline preload="none" width="1920" height="1080" poster="static/oec/posters/why_shape.jpg" src="static/oec/videos/why_shape.mp4" aria-label="Two people of different height, each wearing Aria: the body in motion (AMASS motion capture) beside a standing copy of the same body shape and a ruler marking its height"></video>
+              </figure>
+            </article>
           </div>
         </div>
       </section>
 
-      <!--BibTex citation -->
-      <section class="section" id="BibTeX">
-        <div class="container is-max-desktop content">
-          <div class="bibtex-header">
-            <h2 class="title">BibTeX</h2>
-            <button
-              class="copy-bibtex-btn"
-              onclick="copyBibTeX()"
-              title="Copy BibTeX to clipboard"
-            >
-              <i class="fas fa-copy"></i>
-              <span class="copy-text">Copy</span>
+      <section id="method" class="section">
+        <div class="wrap">
+          <h2 class="section-title">Method</h2>
+          <p class="lead">
+            <span class="name">OmniEgoCap</span> builds on these observations
+            with two components: a <b>sequence-level diffusion framework</b> that
+            infers the wearer's body shape and the camera's visibility context
+            from the entire sequence and reconstructs motion conditioned on both,
+            and <b>geometry-aware visibility augmentation</b>, which exposes the
+            model to diverse camera setups during training.
+          </p>
+        </div>
+        <div class="wrap-wide">
+          <!-- same text | figure layout as #method-augment; the figure links to the full-size PNG. 16:9 like the other
+               method figure; 3D layer camera-ready/project_page/blender/scene_arch.py, diagram arch_figure.py (layout
+               arch_layout.py): input = SMPL-H head pose + visible wrist poses as RGB axes, the same axes on the
+               cleaned bodies; AdaLN / Cross-Attn by colour, legend below -->
+          <article class="why-block" id="method-diffusion">
+            <div class="why-text">
+              <h3>Sequence-level diffusion</h3>
+              <p>
+                A conditional diffusion model reconstructs full-body motion
+                from the head trajectory and intermittently visible
+                hands. An encoder-decoder transformer with sliding-window
+                attention handles long sequences without losing local detail,
+                while a global pathway infers the body shape and
+                visibility context shared by the whole sequence.
+              </p>
+            </div>
+            <figure class="figure">
+              <a href="static/images/architecture.png">
+                <img
+                  src="static/images/figures/architecture.webp"
+                  alt="Method overview: the head pose and the wrist poses that are visible go into a shape, a global and a local encoder; the shape and global encoders pool the whole sequence into one body shape and one visibility context, which condition the local encoder and the denoiser through AdaLN, the per-frame summaries condition the denoiser through cross-attention, and the denoiser turns noisy motion into clean motion over N steps"
+                  width="2000"
+                  height="1125"
+                  loading="lazy"
+                />
+              </a>
+            </figure>
+          </article>
+        </div>
+        <div class="wrap-wide">
+          <article class="why-block" id="method-augment">
+            <div class="why-text">
+              <h3>Geometry-aware visibility augmentation</h3>
+              <p>
+                During training, geometry-aware augmentation samples
+                camera geometries (field of view, tilt and
+                aspect ratio) and the hand visibility each one
+                induces. The model learns to read intermittent hands under any
+                viewing setup and generalizes to unseen devices without
+                device-specific retraining.
+              </p>
+            </div>
+            <!-- Blender (camera-ready/project_page/blender/scene_why_augment.py + precompute_why_augment.py v4.1, 15 s
+                 loop; author 10/18): a wearer frozen mid-stride (AMASS CMU 07_01, right hand ahead); fifteen boundaries
+                 from the training sampler (augment.py) at one pace, one per size bin between the sampler's 25th and
+                 60th size percentile, picked to differ most; no one-parameter sweeps, no temporal drops; wrist rings green inside
+                 the boundary, grey outside. -->
+            <figure class="media-slot">
+              <video data-autoplay muted loop playsinline preload="none" width="1920" height="1080" poster="static/oec/posters/why_augment.jpg" src="static/oec/videos/why_augment.mp4" aria-label="A walking wearer under many visibility boundaries: fifteen different boundaries drawn by the geometry-aware augmentation; each wrist is marked visible or not on every frame"></video>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section id="omniegodb" class="section">
+        <div class="wrap">
+          <h2 class="section-title">OmniEgoDB</h2>
+          <p class="lead">
+            The first mocap benchmark that pairs ground-truth motion with
+            recordings from multiple consumer egocentric devices.
+          </p>
+        </div>
+        <div class="wrap-wide">
+          <ul class="db-stats">
+            <li><b>50</b><span>sequences</span></li>
+            <li><b>4</b><span>subjects</span></li>
+            <li><b>177</b><span>minutes</span></li>
+            <li><b>3</b><span>devices</span></li>
+            <li><b>Xsens</b><span>ground truth</span></li>
+          </ul>
+          <!-- 10 s clips (scene_omniegodb.py, no end-to-start blend), one or two per track: Ours and the baselines, each lane with the Xsens GT of the same moment.
+               The joined omniegodb.mp4 is not used. data-lanes = number of lanes in the video (Ours, EgoAllo (w/ opt), EgoPoser (120°)[, UniEgoMotion]; 3: no UniEgoMotion lane). -->
+          <div class="oec-player" data-oec-player>
+            <figure class="media-slot">
+              <video data-autoplay controls muted loop playsinline preload="none" width="1920" height="960" poster="static/oec/posters/omniegodb_aria_stereo.jpg" src="static/oec/videos/omniegodb_aria_stereo.mp4" aria-label="An OmniEgoDB recording: Ours and the baselines side by side, each with the Xsens ground truth, and the input video as an inset"></video>
+            </figure>
+            <div class="oec-tabs" role="group" aria-label="Device track">
+              <button type="button" class="oec-tab is-active" aria-pressed="true" data-src="static/oec/videos/omniegodb_aria_stereo.mp4" data-poster="static/oec/posters/omniegodb_aria_stereo.jpg" data-lanes="3"><img src="static/oec/posters/omniegodb_aria_stereo_thumb.jpg" alt="" width="360" height="180" loading="lazy" /><span>Aria (Stereo) · 1</span></button>
+              <button type="button" class="oec-tab" aria-pressed="false" data-src="static/oec/videos/omniegodb_aria_stereo_2.mp4" data-poster="static/oec/posters/omniegodb_aria_stereo_2.jpg" data-lanes="3"><img src="static/oec/posters/omniegodb_aria_stereo_2_thumb.jpg" alt="" width="360" height="180" loading="lazy" /><span>Aria (Stereo) · 2</span></button>
+              <button type="button" class="oec-tab" aria-pressed="false" data-src="static/oec/videos/omniegodb_aria_rgb.mp4" data-poster="static/oec/posters/omniegodb_aria_rgb.jpg" data-lanes="4"><img src="static/oec/posters/omniegodb_aria_rgb_thumb.jpg" alt="" width="360" height="180" loading="lazy" /><span>Aria (RGB) · 1</span></button>
+              <button type="button" class="oec-tab" aria-pressed="false" data-src="static/oec/videos/omniegodb_aria_rgb_2.mp4" data-poster="static/oec/posters/omniegodb_aria_rgb_2.jpg" data-lanes="4"><img src="static/oec/posters/omniegodb_aria_rgb_2_thumb.jpg" alt="" width="360" height="180" loading="lazy" /><span>Aria (RGB) · 2</span></button>
+              <button type="button" class="oec-tab" aria-pressed="false" data-src="static/oec/videos/omniegodb_gopro.mp4" data-poster="static/oec/posters/omniegodb_gopro.jpg" data-lanes="4"><img src="static/oec/posters/omniegodb_gopro_thumb.jpg" alt="" width="360" height="180" loading="lazy" /><span>GoPro · 1</span></button>
+              <button type="button" class="oec-tab" aria-pressed="false" data-src="static/oec/videos/omniegodb_gopro_2.mp4" data-poster="static/oec/posters/omniegodb_gopro_2.jpg" data-lanes="4"><img src="static/oec/posters/omniegodb_gopro_2_thumb.jpg" alt="" width="360" height="180" loading="lazy" /><span>GoPro · 2</span></button>
+              <button type="button" class="oec-tab" aria-pressed="false" data-src="static/oec/videos/omniegodb_quest.mp4" data-poster="static/oec/posters/omniegodb_quest.jpg" data-lanes="3"><img src="static/oec/posters/omniegodb_quest_thumb.jpg" alt="" width="360" height="180" loading="lazy" /><span>Quest · 1</span></button>
+              <button type="button" class="oec-tab" aria-pressed="false" data-src="static/oec/videos/omniegodb_quest_2.mp4" data-poster="static/oec/posters/omniegodb_quest_2.jpg" data-lanes="3"><img src="static/oec/posters/omniegodb_quest_2_thumb.jpg" alt="" width="360" height="180" loading="lazy" /><span>Quest · 2</span></button>
+            </div>
+            <p class="oec-source">Each lane is drawn with the Xsens ground truth of the same moment.</p>
+            <div class="oec-legend">
+                <ul class="oec-keys" aria-label="Lanes, left to right, and overlays">
+                  <li class="oec-key oec-key--lead">Left to right:</li>
+                  <li class="oec-key" style="--key: var(--m-ours)"><i aria-hidden="true"></i><span>Ours</span></li>
+                  <li class="oec-key" style="--key: var(--m-egoallo)"><i aria-hidden="true"></i><span>EgoAllo (w/ opt)</span></li>
+                  <li class="oec-key" style="--key: var(--m-egoposer120)"><i aria-hidden="true"></i><span>EgoPoser (120°)</span></li>
+                  <li class="oec-key" style="--key: var(--m-uem)" data-uem><i aria-hidden="true"></i><span>UniEgoMotion (RGB only)</span></li>
+                  <li class="oec-key oec-key--sep" aria-hidden="true"></li>
+                  <li class="oec-key oec-key--gt"><i aria-hidden="true"></i><span>GT (Xsens)</span></li>
+                  <li class="oec-key oec-key--input"><i aria-hidden="true"></i><span>Input</span></li>
+                </ul>
+                <p class="oec-note">
+                  Baselines: EgoAllo (Yi et al., CVPR 2025), EgoPoser (Jiang et al., ECCV 2024),
+                  UniEgoMotion (Patel et al., ICCV 2025).
+                </p>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- In-the-wild demo (author 10/17): Ours alone over the scene point cloud, 60 s per sequence, rendered in
+           camera-ready/project_page/blender (scene_demo.py, windows: demo_windows.py, compose_demo.sh), 1920x960.
+           Sequences A, C (Reading in the Wild, Aria), G (EPIC-KITCHENS-100 P01_101, GoPro), F (our iPhone capture),
+           H (our Quest 3 capture, no scene points);
+           the earlier Keynote demos static/videos/demo1-4 are no longer used. -->
+      <section id="demo" class="section">
+        <div class="wrap">
+          <h2 class="section-title">In-the-Wild Demo</h2>
+          <p class="lead">
+            Up to a minute of in-the-wild egocentric video per clip, reconstructed by
+            <span class="name">OmniEgoCap</span> and shown in the scene's point
+            cloud. The inset shows the input video.
+          </p>
+        </div>
+        <div class="wrap-wide">
+          <div class="player player--wide" data-player>
+            <div class="player-stage">
+              <video
+                controls
+                muted
+                loop
+                playsinline
+                preload="none"
+                width="1920"
+                height="960"
+                poster="static/oec/posters/demo_A.jpg"
+                src="static/oec/videos/demo_A.mp4"
+                aria-label="In-the-wild demo: the OmniEgoCap body in the scene point cloud, with the input video as an inset"
+              ></video>
+            </div>
+            <div class="player-bar">
+              <div class="player-tabs" role="group" aria-label="Demo clips">
+                <button class="tab is-active" aria-pressed="true" data-src="static/oec/videos/demo_A.mp4" data-poster="static/oec/posters/demo_A.jpg"><img src="static/oec/posters/demo_A_thumb.jpg" alt="" width="360" height="180" /><span>Apartment · Aria</span></button>
+                <button class="tab" aria-pressed="false" data-src="static/oec/videos/demo_B.mp4" data-poster="static/oec/posters/demo_B.jpg"><img src="static/oec/posters/demo_B_thumb.jpg" alt="" width="360" height="180" /><span>Kitchen · Aria</span></button>
+                <button class="tab" aria-pressed="false" data-src="static/oec/videos/demo_G.mp4" data-poster="static/oec/posters/demo_G.jpg"><img src="static/oec/posters/demo_G_thumb.jpg" alt="" width="360" height="180" /><span>Kitchen · GoPro</span></button>
+                <button class="tab" aria-pressed="false" data-src="static/oec/videos/demo_F.mp4" data-poster="static/oec/posters/demo_F.jpg"><img src="static/oec/posters/demo_F_thumb.jpg" alt="" width="360" height="180" /><span>Living room · iPhone</span></button>
+                <button class="tab" aria-pressed="false" data-src="static/oec/videos/demo_H.mp4" data-poster="static/oec/posters/demo_H.jpg"><img src="static/oec/posters/demo_H_thumb.jpg" alt="" width="360" height="180" /><span>Living room · Quest 3</span></button>
+              </div>
+            </div>
+          </div>
+          <p class="media-caption">
+            Input videos: Reading in the Wild (Project Aria), EPIC-KITCHENS-100, and our own captures (iPhone, Meta Quest 3).
+          </p>
+        </div>
+      </section>
+
+      <section id="bibtex" class="section">
+        <div class="wrap">
+          <div class="bibtex-head">
+            <h2 class="section-title">BibTeX</h2>
+            <button class="copy-btn" type="button">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <span>Copy</span>
             </button>
           </div>
-          <pre id="bibtex-code"><code>@inproceedings{cho2026omniegocap,
-  title={OmniEgoCap: Camera-Agnostic Sequence-Level Egocentric Motion Reconstruction},
+          <div class="bibtex">
+            <pre id="bibtex-code"><code>@inproceedings{cho2026omniegocap,
+  title={OmniEgoCap: Device-Agnostic Sequence-Level Egocentric Motion Reconstruction},
   author={Cho, Kyungwon and Na, Jeonghyeon and Joo, Hanbyul},
   booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2026},
 }</code></pre>
-        </div>
-      </section>
-      <!--End BibTex citation -->
-
-      <footer class="footer">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-8">
-              <div class="content">
-                <p>
-                  This page was built using the
-                  <a
-                    href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                    target="_blank"
-                  >
-                    Academic Project Page Template
-                  </a>
-                  which was adopted from the 
-                  <a href="https://nerfies.github.io" target="_blank">
-                    Nerfies
-                  </a>
-                   project page. You are free to borrow the source code of this
-                  website, we just ask that you link back to this page in the
-                  footer.
-                  <br />
-                  This website is licensed under a
-                  <a
-                    rel="license"
-                    href="http://creativecommons.org/licenses/by-sa/4.0/"
-                    target="_blank"
-                  >
-                    Creative Commons Attribution-ShareAlike 4.0 International
-                    License
-                  </a>
-                  .
-                </p>
-              </div>
-            </div>
           </div>
         </div>
-      </footer>
+      </section>
     </main>
 
-    <!-- Statcounter tracking code -->
-
-    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
+    <footer class="footer">
+      <div class="wrap-wide">
+        <span>© 2026 Kyungwon Cho · Seoul National University</span>
+        <span>Meta Quest 3 model by <a href="https://sketchfab.com/3d-models/meta-quest-3-65a813833dc04eeeb7d33bdca58c184c">Elin</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+        <a href="https://kyungwoncho.github.io/">kyungwoncho.github.io</a>
+      </div>
+    </footer>
   </body>
 </html>

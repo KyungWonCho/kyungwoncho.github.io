@@ -1,0 +1,489 @@
+/* Body sections added on top of page.css: #why and #omniegodb.
+   Uses the page tokens (--fg, --bg, --border, --accent, ...) and adds the device and method colours. */
+
+/* ---------- media slots (video now or later) ---------- */
+.media-slot {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.media-slot video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.media-slot-note {
+  display: none;
+}
+
+/* No file yet: keep the 16:9 box, show a quiet placeholder instead of an empty player */
+.media-slot.is-pending {
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--border);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgb(127 127 140 / 0.06) 14px 15px),
+    var(--bg-soft);
+  box-shadow: none;
+}
+
+.media-slot.is-pending video {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+}
+
+.media-slot.is-pending .media-slot-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--fg-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.media-slot.is-pending .media-slot-note::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent currentColor;
+}
+
+/* ---------- #why ---------- */
+.why-list {
+  display: grid;
+  gap: 64px;
+  margin-top: 44px;
+}
+
+.why-block {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 36px;
+  align-items: center;
+}
+
+/* ② keeps the same text | video layout; its calibration note sits under the text */
+.why-text .media-caption {
+  margin-top: 14px;
+}
+
+.why-num {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.why-text p {
+  margin: 0;
+  color: var(--fg-soft);
+}
+
+/* ---------- ② device regions: one toggle swaps the video ---------- */
+.fov-scene {
+  display: grid;
+  gap: 14px;
+  /* device colours: the same as the regions in the why_devices videos (blender scene_base.py PALETTE fov_*) */
+  --fov-aria-stereo: #dc631e;
+  --fov-aria-rgb: #b6285b;
+  --fov-gopro: #0b9db3;
+  --fov-quest: #752ea2;
+}
+
+.fov-devices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fov-devices button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--fg-soft);
+  font: 600 0.8rem "Manrope", sans-serif;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.fov-devices button:hover {
+  color: var(--fg);
+  border-color: var(--fg-muted);
+}
+
+.fov-devices button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.fov-devices button[aria-pressed="true"] {
+  border-color: var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.fov-devices .fov-all {
+  margin-left: auto;
+}
+
+.fov-key {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+  background: var(--key, var(--fg-muted));
+  box-shadow: 0 0 0 1.5px var(--bg);
+}
+
+.fov-all .fov-key {
+  background: conic-gradient(var(--fov-aria-stereo) 0 25%, var(--fov-aria-rgb) 0 50%, var(--fov-gopro) 0 75%, var(--fov-quest) 0);
+}
+
+.media-caption {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+/* Why 03: the 2x2 hands video is 1920x1200 (author 10/18) */
+#why-hands .media-slot {
+  aspect-ratio: 16 / 10;
+}
+
+/* ---------- thumbnail-tab players: #omniegodb ---------- */
+/* 16:8 page cut (blender/labeled_wide.sh, author 10/17): the empty band above the horizon is cropped */
+#omniegodb .media-slot,
+#omniegodb .oec-tab img {
+  aspect-ratio: 2 / 1;
+}
+
+.oec-player {
+  /* method colours = the rendered body colours (blender scene_base.py BODY_TARGET); GT and input as rendered */
+  --m-ours: #8ea6ea;
+  --m-egoallo: #be92dc;
+  --m-egoposer: #969ba5;
+  --m-egoposer120: #e28caa;
+  --m-uem: #68acb2;
+  --m-gt: #e29612;
+  --m-input: #3ee08f;
+  margin-top: 28px;
+}
+
+.oec-tabs {
+  display: flex;
+  gap: 12px;
+  margin: 14px -4px 0;
+  padding: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.oec-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.oec-tab {
+  display: flex;
+  flex: 0 0 150px;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--fg-muted);
+  font: 600 0.74rem/1.35 "Manrope", sans-serif;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.oec-tab img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 9px;
+  background: #fff;
+  object-fit: cover;
+  opacity: 0.62;
+  outline: 1px solid var(--border);
+  outline-offset: -1px;
+  transition: opacity 0.15s ease, outline-color 0.15s ease;
+}
+
+.oec-tab:hover {
+  color: var(--fg-soft);
+}
+
+.oec-tab:hover img {
+  opacity: 0.85;
+}
+
+.oec-tab.is-active {
+  color: var(--fg);
+}
+
+.oec-tab.is-active img {
+  opacity: 1;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.oec-tab:focus-visible {
+  outline: none;
+}
+
+.oec-tab:focus-visible img {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.oec-source {
+  margin: 12px 0 0;
+  color: var(--fg-muted);
+  font-size: 0.8rem;
+}
+
+.section .oec-source {
+  margin-bottom: 0;
+}
+
+.oec-legend {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.oec-keys {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  color: var(--fg-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.oec-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.oec-key[hidden] {
+  display: none;
+}
+
+.oec-key sup,
+.oec-note sup {
+  font-size: 0.72em;
+  line-height: 0;
+}
+
+.oec-key i {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+  border-radius: 50%;
+  background: var(--key);
+}
+
+.oec-key--lead {
+  color: var(--fg-muted);
+  font-weight: 600;
+}
+
+.oec-key--sep {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+}
+
+/* GT: an amber bone with a joint, as the skeleton in the videos */
+.oec-key--gt i {
+  position: relative;
+  width: 18px;
+  height: 3px;
+  flex-basis: 18px;
+  border-radius: 2px;
+  background: var(--m-gt);
+}
+
+.oec-key--gt i::after {
+  content: "";
+  position: absolute;
+  top: -2.5px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--m-gt);
+}
+
+/* input: a green ring, as the observed wrists in the videos */
+.oec-key--input i {
+  background: none;
+  box-shadow: inset 0 0 0 2.5px var(--m-input);
+}
+
+.oec-note {
+  margin: 6px 0 0;
+  color: var(--fg-muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.section .oec-note {
+  margin-bottom: 0;
+}
+
+/* ---------- #omniegodb ---------- */
+.db-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 32px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+}
+
+.db-stats li {
+  padding: 18px 4px 16px;
+  text-align: center;
+}
+
+.db-stats li + li {
+  border-left: 1px solid var(--border);
+}
+
+.db-stats b {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.db-stats span {
+  color: var(--fg-muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .why-block {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 720px) {
+  .why-list {
+    gap: 48px;
+    margin-top: 32px;
+  }
+
+  .fov-devices .fov-all {
+    margin-left: 0;
+  }
+
+  .oec-tab {
+    flex-basis: 124px;
+  }
+
+  .oec-keys {
+    gap: 4px 12px;
+    font-size: 0.78rem;
+  }
+
+  .db-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .db-stats li:nth-child(3) {
+    border-left: 0;
+  }
+
+  .db-stats li:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+
+  .db-stats li:nth-child(5) {
+    grid-column: 1 / -1;
+    border-left: 0;
+  }
+
+  .db-stats b {
+    font-size: 1.6rem;
+  }
+}
+
+/* ② in the text | video layout: the five device buttons stay on one line above the video */
+@media (min-width: 861px) {
+  .why-block .fov-devices {
+    flex-wrap: nowrap;
+    gap: 5px;
+  }
+  .why-block .fov-devices button {
+    gap: 6px;
+    padding: 0 10px;
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+}
+
+/* ② device tour: two stacked videos cross-fade at the end of each loop (sections.js) */
+.fov-video video {
+  transition: opacity 0.35s ease;
+}
+.fov-video .fov-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.fov-video video.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* caption line under a full-width media slot (#method augmentation video) */
+.wrap-wide > .media-caption {
+  margin-top: 10px;
+}
+
+/* #method: the augmentation block reuses the #why text | video layout */
+#method-diffusion {
+  margin: 28px 0 56px;   /* first block of #method (author 10/18: diffusion, then augmentation) */
+}
+
+#method-diffusion .figure {
+  margin: 0;
+}
+
+#method-diffusion .figure a {
+  padding: 12px;
+}
