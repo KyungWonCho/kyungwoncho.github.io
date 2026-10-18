@@ -699,6 +699,9 @@ video.addEventListener("ended", () => {
 
 // the video frame on screen (requestVideoFrameCallback), so the 3D shows the same frame as the video
 let videoT = null;
+let holdSince = performance.now();                 // start of the current wait for the input video (see the loop)
+video.addEventListener("loadstart", () => (holdSince = performance.now()));
+video.addEventListener("waiting", () => (holdSince = performance.now()));
 if ("requestVideoFrameCallback" in HTMLVideoElement.prototype) {
   const onFrame = (_, meta) => {
     videoT = meta.mediaTime;
@@ -724,6 +727,10 @@ renderer.setAnimationLoop(() => {
       const pred = t + dt;
       const err = vt - pred;
       t = Math.min(Math.max(Math.abs(err) > 0.25 ? vt : pred + 0.15 * err, 0), end);
+    } else if (playing && hasVideo && !video.paused && video.readyState < 2 && performance.now() - holdSince < 2500) {
+      // the input video is still loading (a clip start, or a stall): hold the 3D on its frame and start with the video,
+      // instead of running ahead and snapping back once it plays (author 10/19: "0.몇초 재생하다가 다시 0초 가서
+      // 재생"). After 2.5 s of waiting the 3D runs on its own (as before) so a video that never arrives cannot freeze it.
     } else if (playing) {
       t += dt;
       if (t > end) {
