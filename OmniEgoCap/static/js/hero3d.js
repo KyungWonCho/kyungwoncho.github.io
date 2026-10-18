@@ -402,12 +402,16 @@ async function showClip(name) {
   current = name;
   const upcoming = nextOf(name);
   for (const k of Object.keys(cache)) if (k !== name && k !== upcoming) delete cache[k]; // shown + next only
-  // fetch the next device in the background so the hand-over has no loading gap
+  // fetch the next device in the background so the hand-over has no loading gap — but only 4 s before this clip
+  // ends and only while the hero is on screen (author 10/19: a visitor who reads one clip and scrolls on should not
+  // download the next one; first screen 7.1 -> ~4.7 MB). If it was skipped, showClip loads it when it is needed.
+  const prefetchAt = Math.max(1500, (next.frames / 30 - 4) * 1000);
   setTimeout(() => {
+    if (current !== name || !onScreen || document.visibilityState === "hidden") return;
     loadClip(upcoming).catch(() => {});
     loadDevice(manifest[upcoming]?.device);
     if (TRACKS[upcoming]?.video) fetch(`${BASE}${upcoming}.mp4`, { priority: "low" }).catch(() => {});
-  }, 1500);
+  }, prefetchAt);
 
   const info = TRACKS[name] || { video: false, caption: "" };
   hasVideo = info.video;
