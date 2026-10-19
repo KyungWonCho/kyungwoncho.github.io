@@ -1037,7 +1037,7 @@ video {
 }
 
 .no-webgl .hero3d-stage {
-  background: url("../images/posters/teaser.jpg") center / cover;
+  background: url("../images/posters/hero.jpg") center / cover;
   opacity: 0.35;
 }
 
